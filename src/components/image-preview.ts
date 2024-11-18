@@ -57,7 +57,8 @@ export class ImagePreview extends LitElement {
       color: white;
     }
 
-    a {
+    a,
+    .photographer-label {
       color: #adadad;
     }
 
@@ -115,7 +116,7 @@ export class ImagePreview extends LitElement {
             </a>
           </span>
 
-          <span class="font-mini">
+          <span class="font-mini photographer-label">
             on
             <a
               href="https://unsplash.com/?utm_source=stock-pix-penpot&utm_medium=referral"

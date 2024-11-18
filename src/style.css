@@ -69,12 +69,21 @@ form {
   width: 15px;
   aspect-ratio: 1;
   border-radius: 100%;
-  border-right: 2px solid var(--da-primary);
-  border-left: 2px solid var(--da-primary);
-  border-bottom: 2px solid var(--da-primary);
   border-top: 2px solid transparent;
 
   animation: loading 1s infinite linear;
+}
+
+body[data-theme="dark"] .loader {
+  border-right: 2px solid var(--da-primary);
+  border-left: 2px solid var(--da-primary);
+  border-bottom: 2px solid var(--da-primary);
+}
+
+body[data-theme="light"] .loader {
+  border-right: 2px solid var(--la-primary);
+  border-left: 2px solid var(--la-primary);
+  border-bottom: 2px solid var(--la-primary);
 }
 
 @keyframes loading {
