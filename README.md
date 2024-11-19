@@ -12,3 +12,7 @@ Plugin to search for free stock images from [Unsplash](https://unsplash.com) ins
 #### Screenshots
 ![demo-01](https://github.com/user-attachments/assets/850f00f7-6fcf-45d0-879f-4927196506ef)
 ![demo-02](https://github.com/user-attachments/assets/85957153-12c0-4c1c-aa9a-8db7ae516b30)
+
+
+Install here: https://penpot.app/penpothub/plugins/stock-pix
+Hosted on Netlify: https://stock-pix.netlify.app
