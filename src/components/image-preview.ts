@@ -83,7 +83,7 @@ export class ImagePreview extends LitElement {
     }
   `;
 
-  handleClick() {
+  handleClick(e: Event) {
     if (this.dataFullUrl) {
       const downloadEndpoint = this.getAttribute("download-endpoint");
       parent.postMessage(
@@ -99,10 +99,14 @@ export class ImagePreview extends LitElement {
     }
   }
 
+  handleLinkClick(e: Event) {
+    e.stopPropagation();
+  }
+
   // Render the UI as a function of component state
   render() {
-    return html` <div class="image-preview" @click=${this.handleClick}>
-      <img alt="Image Preview" src=${this.dataSrc} />
+    return html` <div class="image-preview">
+      <img alt="Image Preview" src=${this.dataSrc} @click=${this.handleClick} />
       <div class="info-overlay">
         <div class="info-content">
           <span class="font-mini photographer-label">Photo by</span>
@@ -111,6 +115,7 @@ export class ImagePreview extends LitElement {
               href=${this.dataPhotographerSource}
               id="photographer-source"
               target="_blank"
+              @click=${this.handleLinkClick}
             >
               ${this.dataPhotographer}
             </a>
@@ -121,6 +126,7 @@ export class ImagePreview extends LitElement {
             <a
               href="https://unsplash.com/?utm_source=stock-pix-penpot&utm_medium=referral"
               target="_blank"
+              @click=${this.handleLinkClick}
             >
               Unsplash
             </a>
@@ -128,7 +134,12 @@ export class ImagePreview extends LitElement {
         </div>
 
         <div class="icon-container">
-          <a id="image-url" href="#" target="_blank">
+          <a
+            id="image-url"
+            href=${this.dataOriginalSource}
+            target="_blank"
+            @click=${this.handleLinkClick}
+          >
             <svg
               xmlns="http://www.w3.org/2000/svg"
               width="16"
