@@ -83,7 +83,7 @@ export class ImagePreview extends LitElement {
     }
   `;
 
-  handleClick(e: Event) {
+  handleClick() {
     if (this.dataFullUrl) {
       const downloadEndpoint = this.getAttribute("download-endpoint");
       parent.postMessage(
