@@ -5,6 +5,11 @@ export default defineConfig({
   plugins: [
     livePreview({
       reload: true,
+      config: {
+        build: {
+          sourcemap: true,
+        },
+      },
     }),
   ],
   build: {
@@ -20,5 +25,6 @@ export default defineConfig({
   },
   preview: {
     port: 4400,
+    cors: true,
   },
 });

@@ -14,7 +14,7 @@ penpot.ui.onMessage<{ type: string; data: any }>((message) => {
         shape.boardY = penpot.viewport.center.y;
         shape.resize(imageData.width, imageData.height);
         shape.fills = [
-          { fillOpacity: 1, fillImage: { ...imageData, keepApectRatio: true } },
+          { fillOpacity: 1, fillImage: { ...imageData, keepAspectRatio: true } },
         ];
 
         penpot.ui.sendMessage({
